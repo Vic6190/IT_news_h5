@@ -1,20 +1,20 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-const prop = defineProps<{ isFollow: boolean, fansCount: number, avatar: string, name: string }>()
-const isfollow = ref(prop.isFollow)
+const prop = defineProps<{ item: FollowUser }>()
+const isfollow = ref(prop.item.mutual_follow)
+
 
 </script>
 
 <template>
-
   <div class="row">
-    <img :src="avatar" alt="暂无" class="avatar">
+    <img :src="item.photo" alt="暂无" class="avatar">
     <span style="position: relative; bottom: 1.5vw;">
       <span style="display: inline-block;font-size: 3vw;">
-        {{ name }}
+        {{ item.name }}
         <p style="font-size: 2.5vw; color:#969799 ;">
-          粉丝数：{{ fansCount }}人
+          粉丝数：{{ item.fans_count }}人
         </p>
       </span>
     </span>
