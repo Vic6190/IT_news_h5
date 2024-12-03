@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { Button, Tab, Tabs, Divider } from 'vant'
+import { Button, Tab, Tabs, Divider, showToast } from 'vant'
 import App from './App.vue'
 import router from './router'
 import 'vant/lib/index.css'
@@ -16,5 +16,6 @@ app.use(Button)
 app.use(Tab)
 app.use(Tabs)
 app.use(Divider)
+app.use(showToast)
 
 app.mount('#app')
