@@ -12,6 +12,7 @@ instance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     // 1. todo 待注入token
     const token = useAuthStore().getToken()
+
     if (token.value) {
       config.headers.Authorization = `Bearer ${token.value}`
     }
@@ -20,7 +21,7 @@ instance.interceptors.request.use(
   (error: AxiosError) => {
     return Promise.reject(error)
   },
-) // 1
+)
 
 // axios的响应拦截器
 instance.interceptors.response.use(
@@ -29,7 +30,7 @@ instance.interceptors.response.use(
     // 这里有点反人类 any不能as, any类型可以.xxx.xxx
     if (response.data.code === 201 || 204) {
       // 真的成功了
-      return response.data.result // 这里不确定类型
+      return response.data.data // 这里不确定类型
     }
     showToast(response.data.msg) // 提示错误消息
     return Promise.reject(new Error(response.data.msg))
