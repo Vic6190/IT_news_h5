@@ -4,7 +4,7 @@ import { showToast } from 'vant'
 
 // 创建一个axios的实例
 const instance = axios.create({
-  baseURL: 'https://toutiao.itheima.net',
+  baseURL: 'https://geek.itheima.net',
   timeout: 10000,
 })
 // 请求拦截器 可以无数个 会按照注册顺序 挨个执行

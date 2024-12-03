@@ -9,6 +9,16 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
+    {
+      path: '/myActivity',
+      name: 'myActivity',
+      component: () => import('../views/myActivity.vue'),
+    },
+    {
+      path: '/myFollow',
+      name: 'myFollow',
+      component: () => import('../views/myFollow.vue'),
+    },
   ],
 })
 
