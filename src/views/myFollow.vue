@@ -60,26 +60,60 @@ onMounted(async () => {
 
       <van-tab title="我的关注">
         <!--关注列表-->
+        <!--列表不为空时-->
         <div v-for="(item, index) in followList" :key="index">
           <FollowOrFansItem :item='item' :is-follow="true" />
         </div>
+        <VanCell v-if="followList.length > 0">
+          <span class="NoMore">
+            没有更多了
+          </span>
+        </VanCell>
+        <!--列表为空时-->
+        <VanCol v-if="followList.length === 0"
+          style="justify-content: center;height: 80vh;display: flex; align-items:  center;">
+          <div>
+            <div>
+              <img src="../components/icons/ic_noData.svg" style="width: 50vw;">
+            </div>
+            <span style="width: 100%;display: inline-block;text-align: center;">暂无粉丝</span>
+          </div>
+        </VanCol>
       </van-tab>
 
       <van-tab title="我的粉丝">
         <!--粉丝列表-->
+        <!--列表不为空时-->
         <div v-for="(item, index) in fansList" :key="index">
           <FollowOrFansItem :item='item' :is-follow="false" />
         </div>
-
+        <VanCell v-if="fansList.length > 0">
+          <span class="NoMore">
+            没有更多了
+          </span>
+        </VanCell>
+        <!--列表为空时-->
+        <VanCol v-if="fansList.length === 0"
+          style="justify-content: center;height: 80vh;display: flex; align-items:  center;">
+          <div>
+            <div>
+              <img src="../components/icons/ic_noData.svg" style="width: 50vw;">
+            </div>
+            <span style="width: 100%;display: inline-block;text-align: center;">暂无粉丝</span>
+          </div>
+        </VanCol>
       </van-tab>
-      <VanCell>
-        <span style="position: relative;right: 40vw;">
-          没有更多了
-        </span>
-      </VanCell>
+
     </van-tabs>
   </div>
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.NoMore {
+  position: relative;
+  right: 40vw;
+}
+
+.NoData {}
+</style>

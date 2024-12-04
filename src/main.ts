@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { Button, Tab, Tabs, Divider, Col, Row, showToast, List, Cell } from 'vant'
+import { Button, Empty, Tab, Tabs, Divider, Col, Row, showToast, List, Cell } from 'vant'
 import App from './App.vue'
 import router from './router'
 import 'vant/lib/index.css'
@@ -21,6 +21,7 @@ app.use(Cell)
 app.use(Col)
 app.use(Row)
 app.use(Cell)
+app.use(Empty)
 app.use(showToast)
 
 app.mount('#app')

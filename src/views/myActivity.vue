@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import router from '@/router';
 import { onMounted, ref } from 'vue';
 
 const active = ref(0)
@@ -35,17 +34,22 @@ onMounted(() => {
           <div>2021/05</div>
         </VanCell>>
       </VanList>
-      <div v-else>
-        暂无作品
-      </div>
+      <!--  <VanCol v-else style="display: flex; justify-content: center;align-items: center ;flex-direction: column;">
+        <img src="../components/icons/ic_noData.svg" style="width: 40vw">
+
+        <div style="font-size:12px;">暂无数据</div>
+      </VanCol> -->
+      <!-- 写半天才发现有写好的😅 -->
+      <VanEmpty v-else description="暂无数据"></VanEmpty>
+
     </van-tab>
     <van-tab title="公 告">
       <VanList v-if="announcementList.length > 0">
         <VanCell v-for="(item, index) in announcementList" :key="index" :title="item.title" :label="item.createTime">
 
-        </VanCell>>
+        </VanCell>
       </VanList>
-      <div v-else>暂无公告</div>
+      <VanEmpty v-else description="暂无数据"></VanEmpty>
     </van-tab>
     <van-tab title="数 据">
       <VanRow :justify="'space-around'">
