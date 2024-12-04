@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { Button, Tab, Tabs, Divider, showToast, List, Cell } from 'vant'
+import { Button, Tab, Tabs, Divider, Col, Row, showToast, List, Cell } from 'vant'
 import App from './App.vue'
 import router from './router'
 import 'vant/lib/index.css'
@@ -17,6 +17,9 @@ app.use(Tab)
 app.use(Tabs)
 app.use(Divider)
 app.use(List)
+app.use(Cell)
+app.use(Col)
+app.use(Row)
 app.use(Cell)
 app.use(showToast)
 
