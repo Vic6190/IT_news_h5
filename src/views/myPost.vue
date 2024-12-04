@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 const postList = ref([])
 onMounted(() => {
   document.title = '我的作品'
