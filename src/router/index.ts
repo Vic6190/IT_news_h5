@@ -15,7 +15,7 @@ const router = createRouter({
       component: () => import('../views/myActivity.vue'),
     },
     {
-      path: '/myFollow',
+      path: '/myFollow/:type?',
       name: 'myFollow',
       component: () => import('../views/myFollow.vue'),
     },
